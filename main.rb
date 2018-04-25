@@ -12,7 +12,7 @@ def main
 
     File.open("assets/google_sheet_export_position_#{item + 1}.csv", 'w') do |outp|
       content.each do |element|
-          outp.write(element)
+          outp.write(element.join('|'))
           outp.write("\n")
       end
     end
