@@ -7,7 +7,8 @@ def main()
     contents = source.readlines.map { |content| content.strip }
   end
 
-  contents = (contents.each_slice((contents.size/4.0).round).to_a)
+  # contents = (contents.each_slice((contents.size/4.0).round).to_a)
+  contents = (contents.each_slice(5).to_a)
 
   (0..contents.size - 1).each do |index|
     File.open("assets/important_words_pos_#{index + 1}.txt", "w") do |outp|
